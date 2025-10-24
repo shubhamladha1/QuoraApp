@@ -11,9 +11,8 @@ import java.time.LocalDateTime;
 public class QuestionResponseDto {
 
     private String id;
-
     private String title;
-    private String CONTENT;
+    private String content;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+//    private LocalDateTime updatedAt;
 }

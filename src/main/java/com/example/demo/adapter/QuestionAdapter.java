@@ -10,7 +10,7 @@ public class QuestionAdapter {
         return QuestionResponseDto.builder()
                 .id(question.getId())
                 .title(question.getTitle())
-                .CONTENT(question.getContent())
+                .content(question.getContent())
                 .createdAt(question.getCreatedAt())
                 .build();
     }
