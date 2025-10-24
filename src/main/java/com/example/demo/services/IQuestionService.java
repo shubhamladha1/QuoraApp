@@ -9,7 +9,7 @@ public interface IQuestionService {
 
     public Mono<QuestionResponseDto> createQuestion(QuestionRequestDTO QuestionRequestDTO);
     public Mono<QuestionResponseDto> getQuestionById(String id);
-    public Flux<QuestionResponseDto> getAllQuestions();
+    public Flux<QuestionResponseDto> getAllQuestions(String cursor, int size);
     public Mono<Void> deleteQuestionById(String id);
     public Flux<QuestionResponseDto>  searchQuestions(String query, int page, int size);
 }

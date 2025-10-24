@@ -10,6 +10,8 @@ import reactor.core.publisher.Mono;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
+import java.time.LocalDateTime;
+
 
 @Repository
 public interface QuestionRepository extends ReactiveMongoRepository<Question, String> {
@@ -20,4 +22,8 @@ public interface QuestionRepository extends ReactiveMongoRepository<Question, St
 
     @Query("{$or:  [{title: {$regex:  ?0,$options: 'i'}},{content :  {$regex:  ?0, $options: 'i'}}]}")
     Flux<Question> findByTitleOrContentContainingIgnoreCase(String searchTerm, Pageable pageable);
+
+    Flux<Question> findByCreatedAtGreaterThanOrderByCreatedAtAsc(LocalDateTime cursor, Pageable pageable);
+
+    Flux<Question> findTop10ByOrderByCreatedAtAsc();
 }
