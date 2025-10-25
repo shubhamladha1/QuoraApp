@@ -42,12 +42,6 @@ public class QuestionService implements IQuestionService{
                 .doOnSuccess(response -> System.out.println("Question fetched successfully: " + response));
     }
 
-//    @Override
-//    public Flux<QuestionResponseDto> getAllQuestions() {
-//        return questionRepository.findAllContent()
-//                .map(QuestionAdapter::toQuestionResponseDto);
-//    }
-
     @Override
     public Flux<QuestionResponseDto> getAllQuestions(String cursor, int size) {
         Pageable pageable = PageRequest.of(0, size);

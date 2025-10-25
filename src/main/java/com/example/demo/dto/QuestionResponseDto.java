@@ -1,7 +1,5 @@
 package com.example.demo.dto;
-
 import lombok.*;
-
 import java.time.LocalDateTime;
 
 @Data
